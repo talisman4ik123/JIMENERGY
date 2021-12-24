@@ -1,2 +1,6 @@
 //название шрифта, название файла, fw, fs
-@include font('Prosto One', prostoone, 400, normal);
+@include font('Montserrat', Montserrat-Medium, 500, normal);
+@include font('Montserrat', Montserrat-SemiBold, 600, normal);
+
+@include font('Playfair Display', Playfairdisplayregular, 400, normal);
+@include font('Playfair Display', Playfairdisplaybold, 700, normal);
