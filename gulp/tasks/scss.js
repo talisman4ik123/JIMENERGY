@@ -10,20 +10,21 @@ import groupCssMediaQueries from 'gulp-group-css-media-queries';
 const sass = gulpSass(dartSass);
 
 export const scss = () => {
-    return app.gulp.src(app.path.src.scss, { sourcemaps: app.isDev })
+	return app.gulp.src(app.path.src.scss, { sourcemaps: app.isDev })
 
-        .pipe (app.plugins.plumber(
-            app.plugins.notify.onError({
-                title: "SCSS",
-                message: "Error: <%= error.message %>"
-            })))
+		.pipe(app.plugins.plumber(
+			app.plugins.notify.onError({
+				title: "SCSS",
+				message: "Error: <%= error.message %>"
+			})))
 
-        .pipe(app.plugins.replace(/@img\//g, '../images/'))
+		.pipe(app.plugins.replace(/@img\//g, '../images/')) //ищет @img/ и заменяет на ../images/
+		.pipe(app.plugins.replace(/\.\.\/\.\.\//g, '../images/')) //ищет @img/ и заменяет на ../images/
 
-        .pipe(sass({
-            outputStyle: 'expanded',
-            removeComments: true
-        }))
+		.pipe(sass({
+			outputStyle: 'expanded',
+			removeComments: true
+		}))
 
 		.pipe(
 			app.plugins.if(
@@ -61,11 +62,11 @@ export const scss = () => {
 			)
 		)
 
-        .pipe(rename({
-            extname: ".min.css"
-        }))
+		.pipe(rename({
+			extname: ".min.css"
+		}))
 
-        .pipe(app.gulp.dest(app.path.build.css))
+		.pipe(app.gulp.dest(app.path.build.css))
 
-        .pipe(app.plugins.browserSync.stream());
+		.pipe(app.plugins.browserSync.stream());
 };

@@ -11,6 +11,11 @@ body {
     font-weight: 500;
 }
 
+._lock {
+    overflow: hidden;
+    touch-action: none;
+}
+
 .wrapper {
     width: 100%;
     overflow: hidden;
@@ -76,4 +81,18 @@ body {
             }
         }
     }
+}
+
+.big-title {
+    font-family: $fontFamilyTitle;
+    font-size: rem(48);
+    line-height: math.div(56, 48);
+    text-transform: uppercase;
+}
+
+.title {
+    font-family: $fontFamilyTitle;
+    font-size: rem(36);
+    line-height: math.div(54, 36);
+    letter-spacing: 0.05em;
 }

@@ -1,6 +1,55 @@
 <header class="header">
-    <div class="header__container">
-        <div class="header__inner">
+    <div class="header__inner">
+        <div class="header__top header-top">
+            <div class="header-top__container">
+                <div class="logo header-top__logo">
+                    <a href="#" class="logo__link">
+                        <img src="@icon/logo.svg" alt="Логотип сайта JIMENERGY" class="logo__img">
+                    </a>
+                </div>
+                <nav class="header-top__menu menu">
+                    <ul class="menu__list">
+                        <li class="menu__item"><a href="#" class="menu__link">Каталог</a></li>
+                        <li class="menu__item"><a href="#" class="menu__link">О компании</a></li>
+                        <li class="menu__item"><a href="#" class="menu__link">Партнеры</a></li>
+                        <li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
+                    </ul>
+                </nav>
+                <button class="btn header-top__btn">
+                    Обратный звонок
+                </button>
+                @@include('../html/burger.html',{})
+            </div>
+        </div>
+        <div class="header__main header-main">
+            <div class="header-main__container">
+                <div class="header-main__wrapper">
+                    <p class="header-main__caption">
+                        надежный и ответственный партнер – поставщик
+                    </p>
+                    <div class="header-main__content">
+                        <h1 class="header-main__title">
+                            электротхническая продукция
+                        </h1>
+                        <h4 class="header-main__subtitle">
+                            по всей территории Республики Казахстан
+                        </h4>
+                        <button class="header-main__btn btn">
+                            Оформить заявку
+                            <span class="header-main__span _icon-right-arrow"></span>
+                        </button>
+                    </div>
+                    <div class="header-main__bottom">
+                        <h4 class="header-main__subtitle">
+                            поставками электротехнической продукции
+                        </h4>
+                        <p class="header-main__text">
+                            Мы снабжаем произвдственные и строительные компании по всей территории Республикик
+                            Казахстан
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </header>

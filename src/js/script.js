@@ -1,6 +1,8 @@
-import {isWebp} from "./libs/webpImg.js";
+import { isWebp } from "./libs/webpImg.js";
 isWebp();
 
+import { burger } from "./libs/burger.js";
+burger('header-top__menu');
 
 // import {formPopup} from "./libs/popupForm.js"
 // formPopup(openBtns, fromBG, form, formBody);
