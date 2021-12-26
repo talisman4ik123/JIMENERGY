@@ -1,0 +1,114 @@
+.how-we-work {
+    position: relative;
+    background-color: $bgc;
+    &__inner {
+        padding-bottom: 100px;
+    }
+
+    &__title {
+        margin-bottom: 70px;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__item {
+        width: 307px;
+        height: 203px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__subcontent {
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+        align-items: center;
+    }
+
+    &__svg {
+        margin-bottom: 25px;
+    }
+
+    &__span {
+        display: block;
+        margin-top: 15px;
+        font-family: $fontFamilyTitle;
+        font-size: rem(36);
+        line-height: math.div(54, 36);
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+    }
+
+    &__subtitle {
+        font-weight: 600;
+        font-size: rem(20);
+        line-height: math.div(30, 20);
+        margin-bottom: 20px;
+    }
+
+    &__text {
+        max-width: 218px;
+        font-size: rem(16);
+        line-height: math.div(24, 16);
+    }
+    &__item {
+        .horizontal-line {
+            position: relative;
+            width: 100%;
+            height: 1px;
+            background-color: #fff;
+            margin-bottom: 17px;
+            &::after, &::before {
+                content: '';
+                position: absolute;
+                width: 4px;
+                height: 4px;
+                background-color: inherit;
+                transform: rotate(45deg);
+                bottom: -1px;
+            }
+            &::after {
+                left: 0;
+            }
+            &::before {
+                right: 0;
+            }
+        }
+    }
+    &__item:last-child {
+        .horizontal-line::before {
+            display: none;
+        }
+    }
+}
+
+.vertical-line {
+    position: relative;
+    height: 69px;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+    &::after, &::before {
+        content: '';
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background-color: inherit;
+        transform: rotate(45deg);
+        left: -1.5px;
+    }
+    &::after {
+        top: -4.8px;
+    }
+    &::before {
+        bottom: -4.8px;
+    }
+}

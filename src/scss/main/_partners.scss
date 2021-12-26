@@ -1,0 +1,35 @@
+.partners {
+    color: $bgc;
+
+    &__inner {
+        padding-top: 100px;
+        padding-bottom: 40px;
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 80px;
+    }
+
+    &__span {
+        font-weight: 600;
+        font-size: rem(18);
+        line-height: math.div(26, 18);
+        text-align: right;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        margin-right: 30px;
+        margin-left: 30px;
+        margin-bottom: 60px;
+    }
+}

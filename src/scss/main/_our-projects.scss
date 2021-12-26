@@ -1,0 +1,87 @@
+.our-projects {
+    background-color: $bgc;
+
+    &__inner {
+        padding-bottom: 100px;
+    }
+
+    &__title {
+        margin-bottom: 50px;
+    }
+
+    &__list {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        @include adaptiveValue("width", 289, 200);
+        margin-bottom: 40px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    &__box {
+        @include adaptiveValue("width", 279, 200);
+        margin-bottom: 30px;
+        &::before {
+            @include adaptiveValue("top", 10, 5);
+            @include adaptiveValue("left", 10, 5);
+        }
+    }
+
+    &__caption {
+        font-weight: 600;
+        @include adaptiveValue("max-width", 289, 180);
+        @include adaptiveValue("font-size", 20, 16);
+        line-height: math.div(30, 20);
+        text-align: center;
+    }
+
+    &__btn {
+        display: block;
+        @include adaptiveValue("width", 226, 200);
+        margin: 0 auto;
+        padding: 15px;
+        font-size: rem(16);
+        line-height: math.div(20, 16);
+    }
+
+    &__span {
+        margin-left: 5px;
+        &::before {
+            font-size: rem(12);
+        }
+    }
+}
+
+._pc {
+    .read-more {
+        padding: 8px;
+        will-change: transform;
+        transition: all .4s ease;
+        transform: translate(10px, 50px);
+        opacity: 0;
+        pointer-events: none;
+        overflow: hidden;
+    }
+    .our-projects {
+        &__img {
+            will-change: transform;
+            transition: transform .4s ease;
+        }
+        &__item:hover {
+            .our-projects__img {
+                transform: translate(10px, 10px);
+            }
+            .read-more {
+                transform: translate(10px, 0px);
+                opacity: 1;
+                pointer-events: auto;
+                overflow: auto;
+            }
+        }
+    }
+}

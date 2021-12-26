@@ -96,3 +96,19 @@ body {
     line-height: math.div(54, 36);
     letter-spacing: 0.05em;
 }
+
+.img-box {
+    @include adaptiveValue("width", 550, 300);
+    position: relative;
+    z-index: 3;
+    &::before {
+        content: "";
+        position: absolute;
+        @include adaptiveValue("top", 20, 5);
+        @include adaptiveValue("left", 20, 5);
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: $orange;
+    }
+}

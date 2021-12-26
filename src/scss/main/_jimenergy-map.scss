@@ -1,0 +1,75 @@
+.jimenergy-map {
+    background-color: $darkBlue;
+    &__inner {
+        position: relative;
+    }
+    &__content {
+        background-color: $darkBlue;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        padding: 30px 50px;
+    }
+}
+
+
+.form-jimenergy {
+
+    &__legend {
+        font-size: rem(36);
+        margin-bottom: 30px;
+    }
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__input {
+        margin-bottom: 30px;
+        background-color: transparent;
+        border: 1px solid #fff;
+        padding: 12px;
+        color: #fff;
+        &:-webkit-autofill {
+            transition: all 5000s ease-in-out;
+        }
+    }
+
+    &__textarea {
+        resize: none;
+        margin-bottom: 40px;
+        background-color: transparent;
+        border: 1px solid #fff;
+        padding: 12px;
+        height: 100px;
+        color: #fff;
+    }
+
+    &__label {
+        font-weight: 500;
+        font-size: rem(14);
+        line-height: math.div(16, 14);
+        color: #fff;
+        cursor: text;
+        will-change: transform;
+        transition: all .4s ease;
+        transform: translate(12px, 30px);
+        &.active {
+            transform: translate(0px, -3px);
+            color: $orange;
+            //font-weight: 600;
+        }
+    }
+
+    &__btn {
+        padding: 8px 15px;
+    }
+
+    &__span {
+        margin-left: 5px;
+        &::before {
+            font-size: rem(12);
+        }
+    }
+}

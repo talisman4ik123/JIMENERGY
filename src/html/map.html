@@ -1,0 +1,20 @@
+<div class="map" id="map">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+    <script type="text/javascript">
+        ymaps.ready(init);
+        function init(){
+            var myMap = new ymaps.Map("map", {
+                center: [51.142065, 71.466982],
+                zoom: 17
+            });
+            myMap.controls.remove('zoomControl');  
+            myMap.controls.remove('trafficControl');  
+            myMap.controls.remove('typeSelector'); 
+            myMap.controls.remove('fullscreenControl');
+            myMap.controls.remove('rulerControl');
+            myMap.controls.remove('Button');
+            myMap.controls.remove('geolocationControl');
+            myMap.controls.remove('searchControl');
+        }
+    </script>
+</div>
