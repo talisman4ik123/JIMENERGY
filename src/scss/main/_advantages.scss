@@ -48,6 +48,15 @@
         &:nth-child(6) {
             background-image: url(../svgicons/rocket.svg);
         }
+
+        opacity: 0;
+        will-change: transform;
+        transform: scale(.6);
+        transition: all .6s ease;
+        &._active {
+            opacity: 1;
+            transform: scale(1)
+        }
     }
 
     &__caption {

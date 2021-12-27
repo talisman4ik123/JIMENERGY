@@ -16,6 +16,15 @@
         flex-wrap: wrap;
     }
 
+    &__img {
+        will-change: transform;
+        transform: translate(10px, 10px);
+        transition: all .6s ease;
+        &._active {
+            transform: translate(0, 0);
+        }
+    }
+
     &__item {
         @include adaptiveValue("width", 289, 200);
         margin-bottom: 40px;
@@ -38,15 +47,36 @@
         @include adaptiveValue("font-size", 20, 16);
         line-height: math.div(30, 20);
         text-align: center;
+
+        opacity: 0;
+        will-change: transform;
+        transform: translateY(-50px);
+        transition: all .6s ease;
+        &._active {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     &__btn {
-        display: block;
+        display: flex;
+        justify-content: center;
         @include adaptiveValue("width", 226, 200);
         margin: 0 auto;
         padding: 15px;
         font-size: rem(16);
         line-height: math.div(20, 16);
+        span {
+            display: block;
+            margin-left: 10px;
+        }
+
+        will-change: transform;
+        transform: translateY(50px);
+        transition: all .6s ease;
+        &._active {
+            transform: translateY(0);
+        }
     }
 
     &__span {
@@ -59,7 +89,8 @@
 
 ._pc {
     .read-more {
-        padding: 8px;
+        display: flex;
+        padding: 8px 14px;
         will-change: transform;
         transition: all .4s ease;
         transform: translate(10px, 50px);

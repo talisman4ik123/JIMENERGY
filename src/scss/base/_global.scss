@@ -9,6 +9,7 @@ body {
     font-family: $fontFamily;
     font-size: $fontSize;
     font-weight: 500;
+    overflow-x: hidden;
 }
 
 ._lock {
@@ -88,6 +89,14 @@ body {
     font-size: rem(48);
     line-height: math.div(56, 48);
     text-transform: uppercase;
+    opacity: 0;
+    will-change: transform;
+    transform: translateX(-50px);
+    transition: all .6s ease;
+    &._active {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .title {
@@ -95,6 +104,15 @@ body {
     font-size: rem(36);
     line-height: math.div(54, 36);
     letter-spacing: 0.05em;
+
+    opacity: 0;
+    will-change: transform;
+    transform: translateX(-50px);
+    transition: all .6s ease;
+    &._active {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .img-box {
@@ -111,4 +129,68 @@ body {
         z-index: -1;
         background-color: $orange;
     }
+}
+
+._pc {
+    // focus
+    .menu__link:focus,
+    .logo__link:focus,
+    .catalog__link:focus,
+    .catalog-footer__link:focus,
+    .contacts-footer__link:focus {
+        outline: 1px solid $orange;
+    }
+    .catalog__link:hover {
+        outline: none;
+    }
+    .btn:focus {
+        border: 1px solid $orange;
+    }
+    .header-main__btn:focus {
+        border: 1px solid $darkBlue;
+    }
+
+    // hover
+    .menu__link, .catalog-footer__link, .contacts-footer__link {
+        transition: color .4s ease;
+        &:hover {
+            color: $orange;
+        }
+    }
+
+    .btn {
+        transition: transform .4s ease;
+        will-change: transform;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.btn {
+    span {
+        transition: transform .3s ease;
+    }
+}
+
+.contacts-footer__btn:active,
+.header-main__btn:active,
+.form-jimenergy__btn:active,
+.read-more:active,
+.header-top__btn:active {
+    border: 1px solid #fff !important;
+    span {
+        transform: translateX(10px);
+    }
+}
+
+.our-projects__btn:active {
+    border: 1px solid #fff !important;
+    span {
+        transform: translateY(10px);
+    }
+}
+
+a:active {
+    outline: none !important;
 }

@@ -9,14 +9,15 @@
                 </div>
                 <nav class="header-top__menu menu">
                     <ul class="menu__list">
-                        <li class="menu__item"><a href="#" class="menu__link">Каталог</a></li>
-                        <li class="menu__item"><a href="#" class="menu__link">О компании</a></li>
-                        <li class="menu__item"><a href="#" class="menu__link">Партнеры</a></li>
-                        <li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
+                        <li class="menu__item"><a href="#" data-goto=".main__section-1" class="menu__link">Каталог</a></li>
+                        <li class="menu__item"><a href="#" data-goto=".main__section-2" class="menu__link">О компании</a></li>
+                        <li class="menu__item"><a href="#" data-goto=".main__section-3" class="menu__link">Партнеры</a></li>
+                        <li class="menu__item"><a href="#" data-goto=".main__section-4" class="menu__link">Контакты</a></li>
                     </ul>
                 </nav>
                 <button class="btn header-top__btn">
                     Обратный звонок
+                    <span class="header-main__span _icon-right-arrow"></span>
                 </button>
                 @@include('../html/burger.html',{})
             </div>
@@ -24,10 +25,10 @@
         <div class="header__main header-main">
             <div class="header-main__container">
                 <div class="header-main__wrapper">
-                    <p class="header-main__caption">
+                    <p class="header-main__caption _animation-element">
                         надежный и ответственный партнер – поставщик
                     </p>
-                    <div class="header-main__content">
+                    <div class="header-main__content _animation-element">
                         <h1 class="header-main__title">
                             электротхническая продукция
                         </h1>
@@ -39,7 +40,7 @@
                             <span class="header-main__span _icon-right-arrow"></span>
                         </button>
                     </div>
-                    <div class="header-main__bottom">
+                    <div class="header-main__bottom _animation-element">
                         <h4 class="header-main__subtitle">
                             поставками электротехнической продукции
                         </h4>

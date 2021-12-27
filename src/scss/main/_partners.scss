@@ -18,6 +18,15 @@
         font-size: rem(18);
         line-height: math.div(26, 18);
         text-align: right;
+
+        opacity: 0;
+        will-change: transform;
+        transform: translateX(50px);
+        transition: all .6s ease;
+        &._active {
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
 
     &__list {
@@ -31,5 +40,14 @@
         margin-right: 30px;
         margin-left: 30px;
         margin-bottom: 60px;
+
+        opacity: 0;
+        will-change: transform;
+        transform: scale(.6);
+        transition: all .6s ease;
+        &._active {
+            opacity: 1;
+            transform: scale(1);
+        }
     }
 }

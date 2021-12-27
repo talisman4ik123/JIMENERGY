@@ -20,6 +20,16 @@
 
 .about-content {
     padding: 10px;
+    &__box {
+        opacity: 0;
+        will-change: transform;
+        transform: translateX(150px);
+        transition: all .6s ease;
+        &._active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
 }
 
 .about-main {
@@ -28,13 +38,32 @@
         font-weight: 600;
         font-size: rem(20);
         line-height: math.div(30, 20);
+
+        will-change: transform;
+        opacity: 0;
+        transform: translateY(100px);
+        transition: all .6s ease-out;
         &:first-child {
             margin-bottom: 20px;
+            transition: all .5s ease-out;
+        }
+        &._active {
+            opacity: 1;
+            transform: translateY(0px);
         }
     }
 
     &__list {
         margin-top: 10px;
+        will-change: transform;
+        opacity: 0;
+        transform: translateY(100px);
+        transition: all .7s ease-out;
+
+        &._active {
+            opacity: 1;
+            transform: translateY(0px);
+        }
     }
 
     &__item {

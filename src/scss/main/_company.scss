@@ -9,6 +9,14 @@
 
     &__box {
         margin-right: 60px;
+        opacity: 0;
+        will-change: transform;
+        transform: translateX(-150px);
+        transition: all .6s ease;
+        &._active {
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
 
     &__content {
@@ -21,10 +29,22 @@
     &__span {
         display: block;
         margin-bottom: 20px;
+        transition: all .6s ease;
+    }
+
+    &__span, &__list {
+        opacity: 0;
+        will-change: transform;
+        transform: translateY(50px);
+        &._active {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     &__list {
         margin-left: 20px;
+        transition: all .7s ease;
     }
 
     &__item {

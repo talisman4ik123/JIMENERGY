@@ -6,9 +6,17 @@
     &__content {
         background-color: $darkBlue;
         position: absolute;
-        bottom: 20px;
-        right: 20px;
         padding: 30px 50px;
+
+        opacity: 0;
+        right: -60px;
+        bottom: -60px;
+        transition: all .6s ease;
+        &._active {
+            opacity: 1;
+            right: 20px;
+            bottom: 20px;
+        }
     }
 }
 
@@ -64,6 +72,7 @@
 
     &__btn {
         padding: 8px 15px;
+        display: flex;
     }
 
     &__span {

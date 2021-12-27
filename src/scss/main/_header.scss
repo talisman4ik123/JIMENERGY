@@ -28,6 +28,8 @@
 	}
 
 	&__btn {
+		display: flex;
+		align-items: center;
 		font-size: rem(14);
 		line-height: math.div(17, 14);
 		padding-top: 14px;
@@ -53,6 +55,15 @@
 		margin-left: auto;
 		margin-bottom: 75px;
 		text-transform: uppercase;
+
+		transition: all .5s ease;
+		will-change: transform;
+		transform: translateX(200%);
+		opacity: 0;
+		&._active {
+			transform: translateX(0px);
+			opacity: 1;
+		}
 	}
 
 	&__content {
@@ -64,6 +75,15 @@
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: top right;
+
+		transition: all .7s ease;
+		will-change: transform;
+		transform: translateY(-100%);
+		opacity: 0;
+		&._active {
+			transform: translateY(0px);
+			opacity: 1;
+		}
 	}
 
 	&__title {
@@ -127,6 +147,14 @@
 				bottom: 0;
 				left: 0;
 			}
+		}
+		transition: all .5s ease;
+		will-change: transform;
+		transform: translateX(-200%);
+		opacity: 0;
+		&._active {
+			transform: translateX(0px);
+			opacity: 1;
 		}
 	}
 
