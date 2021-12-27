@@ -1,8 +1,9 @@
 .header {
-
+	overflow-x: hidden;
 	&__top {
 		background-color: #516C81;
-		padding: 28px 0px 28px 0px;
+		@include adaptiveValue("padding-top", 28, 20);
+		@include adaptiveValue("padding-bottom", 28, 20);
 	}
 
 	&__main {
@@ -11,6 +12,8 @@
 		background-repeat: no-repeat;
 		background-position: top center;
 		padding: 75px 0px 100px 0px;
+		@include adaptiveValue("padding-top", 75, 32);
+		@include adaptiveValue("padding-bottom", 100, 120);
 	}
 }
 
@@ -34,8 +37,8 @@
 		line-height: math.div(17, 14);
 		padding-top: 14px;
 		padding-bottom: 14px;
-		@include adaptiveValue("padding-left", 26.5, 15);
-		@include adaptiveValue("padding-right", 26.5, 15);
+		@include adaptiveValue("padding-left", 26.5, 8);
+		@include adaptiveValue("padding-right", 26.5, 8);
 	}
 }
 
@@ -48,14 +51,16 @@
 
 	&__caption {
 		font-weight: 600;
-		font-size: rem(20);
+		@include adaptiveValue("font-size", 20, 14);
+		@include adaptiveValue("max-width", 360, 254);
 		line-height: math.div(30, 20);
 		text-align: right;
 		max-width: 360px;
 		margin-left: auto;
-		margin-bottom: 75px;
+		@include adaptiveValue("margin-bottom", 75, 45);
 		text-transform: uppercase;
 
+		overflow-x: hidden;
 		transition: all .5s ease;
 		will-change: transform;
 		transform: translateX(200%);
@@ -76,6 +81,7 @@
 		background-repeat: no-repeat;
 		background-position: top right;
 
+		overflow-x: hidden;
 		transition: all .7s ease;
 		will-change: transform;
 		transform: translateY(-100%);
@@ -88,7 +94,7 @@
 
 	&__title {
 		font-family: $fontFamilyTitle;
-		font-size: rem(48);
+		@include adaptiveValue("font-size", 48, 26);
 		line-height: math.div(56, 48);
 		font-weight: 400;
 		text-align: right;
@@ -98,19 +104,19 @@
 
 	&__subtitle {
 		font-weight: 600;
-		font-size: rem(20);
-		line-height: math.div(30, 20);
+		@include adaptiveValue("font-size", 20, 17);
+		@include adaptiveValue("line-height", 30, 22);
 		max-width: 360px;
 		text-align: right;
 		margin-left: auto;
-		margin-bottom: 80px;
+		@include adaptiveValue("margin-bottom", 80, 30);
 	}
 
 	&__btn {
 		display: flex;
 		align-items: center;
 		margin-left: auto;
-		font-size: rem(16);
+		@include adaptiveValue("font-size", 16, 14);
 		line-height: math.div(20, 16);
 		padding-top: 15px;
 		padding-bottom: 15px;
@@ -130,10 +136,10 @@
 		max-width: 310px;
 		position: absolute;
 		left: 0;
-		bottom: 0;
+		@include adaptiveValue("bottom", 0, -100);
 		.header-main__subtitle {
 			position: relative;
-			margin-bottom: 20px;
+			@include adaptiveValue("margin-bottom", 20, 10);
 			text-align: left;
 			margin-left: 0;
 			max-width: 260px;
@@ -148,6 +154,7 @@
 				left: 0;
 			}
 		}
+		overflow-x: hidden;
 		transition: all .5s ease;
 		will-change: transform;
 		transform: translateX(-200%);
@@ -189,7 +196,7 @@
 
 .logo {
 	&__img {
-		@include adaptiveValue("max-width", 290, 180);
+		@include adaptiveValue("max-width", 290, 200);
 	}
 }
 
@@ -200,7 +207,71 @@
 	color: inherit;
 }
 
-@media (max-width: 960px) {
+.burger-content {
+	display: none;
+	&__main {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin-bottom: 50px;
+	}
+	&__btn {
+		display: flex;
+		margin: 0 auto;
+		padding: 14px 20px;
+		border: 1px solid $orange;
+		span {
+			margin-left: 10px;
+			&::before {
+				font-size: rem(12);
+			}
+		}
+	}
+	.menu {
+		&__list {
+			display: flex;
+			flex-direction: column;
+			margin-right: 15px;
+			margin-left: 15px;
+			margin-bottom: 40px;
+		}
+		&__item:not(:last-child) {
+			margin-bottom: 20px;
+		}
+		&__link {
+			font-size: rem(18);
+			font-weight: 500;
+			position: relative;
+			&::after {
+				content: '';
+				position: absolute;
+				bottom: -3px;
+				left: 0;
+				width: 45%;
+				height: 1.5px;
+				background-color: $orange;
+			}
+		}
+	}
+	.contacts {
+		&__list {
+			margin-right: 15px;
+			margin-left: 15px;
+		}
+		&__item:not(:last-child) {
+			margin-bottom: 20px;
+		}
+		&__item:nth-child(2) {
+			max-width: 200px;
+			line-height: math.div(28, 18);
+			&::before {
+				margin-right: 12px;
+			}
+		}
+	}
+}
+
+@media (max-width: 1000px) {
 	.header-top {
 		&__container {
 			justify-content: flex-start;
@@ -210,26 +281,33 @@
 			margin-right: auto;
 		}
 		&__menu {
-			position: fixed;
-            top: 100px;
-			z-index: 4;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            //padding: 100px 30px 30px 30px;
-            transition: left .3s ease 0s;
-            overflow: auto;
-			&--active {
-				left: 0;
-			}
+			display: none;
+		}
+		&__btn {
+			display: none;
+		}
+	}
+	.burger-content {
+		display: block;
+		position: fixed;
+		top: 85px;
+		width: 100%;
+		height: 100%;
+		background-color: $darkBlue;
+		z-index: 100;
+		overflow: auto;
+		left: -200%;
+		transition: left .3s ease;
+		padding: 50px 15px 150px 15px;
+		&--active {
+			left: 0;
 		}
 	}
 }
 
 .burger {
 	display: none;
-	@media (max-width: 960px) {
+	@media (max-width: 1000px) {
 		display: block;
 		margin-left: 20px;
 		width: 30px;

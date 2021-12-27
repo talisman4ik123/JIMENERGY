@@ -1,6 +1,6 @@
 .advantages {
     background-color: $bgc;
-
+    overflow-x: hidden;
     &__inner {
         padding-bottom: 40px;
     }
@@ -61,7 +61,7 @@
 
     &__caption {
         font-weight: 600;
-        font-size: rem(20);
+        @include adaptiveValue("font-size", 20, 18);
         line-height: math.div(30, 20);
         margin-bottom: 15px;
         margin-right: auto;
@@ -70,8 +70,9 @@
 
     &__text {
         font-weight: 500;
-        font-size: rem(16);
+        @include adaptiveValue("font-size", 16, 13);
         line-height: math.div(24, 16);
         max-width: 292px;
+        //@include adaptiveValue("max-width", 292, 214);
     }
 }

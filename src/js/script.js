@@ -2,7 +2,7 @@ import { isWebp } from "./libs/webpImg.js";
 isWebp();
 
 import { burger } from "./libs/burger.js";
-burger('header-top__menu');
+burger('burger-content');
 
 // import {formPopup} from "./libs/popupForm.js"
 // formPopup(openBtns, fromBG, form, formBody);
@@ -55,11 +55,13 @@ if (menuLinks.length > 0) {
             const gotoBlock = document.querySelector(menuLink.dataset.goto); //получаем объект на который ссылаемся
             const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset;
 
-            // if (iconMenu.classList.contains('menu__icon--active')) {
-            //     document.body.classList.remove('_lock');
-            //     iconMenu.classList.remove("menu__icon--active");
-            //     headerBurger.classList.remove("header__burger--active");
-            // }
+            const iconMenu = document.querySelector('.burger');
+            const burgerContent = document.querySelector('.burger-content');
+            if (iconMenu.classList.contains('burger--active')) {
+                document.body.classList.remove('_lock');
+                iconMenu.classList.remove("burger--active");
+                burgerContent.classList.remove("burger-content--active");
+            }
             window.scrollTo({
                 top: gotoBlockValue,
                 behavior: "smooth"

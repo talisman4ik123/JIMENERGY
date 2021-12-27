@@ -1,6 +1,6 @@
 .partners {
     color: $bgc;
-
+    overflow-x: hidden;
     &__inner {
         padding-top: 100px;
         padding-bottom: 40px;
@@ -18,7 +18,7 @@
         font-size: rem(18);
         line-height: math.div(26, 18);
         text-align: right;
-
+        
         opacity: 0;
         will-change: transform;
         transform: translateX(50px);

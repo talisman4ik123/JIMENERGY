@@ -1,6 +1,6 @@
 .company {
     background-color: $bgc;
-
+    overflow-x: hidden;
     &__inner {
         padding-bottom: 100px;
         display: flex;

@@ -1,14 +1,14 @@
 .about {
-    
+    overflow: hidden;
     background-color: $bgc;
 
     &__inner {
-        padding-top: 100px;
-        padding-bottom: 100px;
+        @include adaptiveValue("padding-top", 100, 60);
+		@include adaptiveValue("padding-bottom", 100, 60);
     }
 
     &__title {
-        margin-bottom: 65px;
+        @include adaptiveValue("margin-bottom", 65, 45);
     }
 
     &__content {
@@ -30,13 +30,16 @@
             transform: translateX(0);
         }
     }
+    &__main {
+        margin-right: 10px;
+    }
 }
 
 .about-main {
     max-width: 536px;
     &__text {
         font-weight: 600;
-        font-size: rem(20);
+        @include adaptiveValue("font-size", 20, 14);
         line-height: math.div(30, 20);
 
         will-change: transform;
