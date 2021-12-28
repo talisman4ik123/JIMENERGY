@@ -20,4 +20,8 @@
     a.ymaps-2-1-79-gototech {
         display: none;
     }
+    @media (max-width: 750px) {
+        height: 350px;
+        margin-top: 15px;
+    }
 }

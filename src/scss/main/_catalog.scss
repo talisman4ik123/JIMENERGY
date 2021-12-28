@@ -2,11 +2,12 @@
     background-color: $bgc;
     overflow-x: hidden;
     &__inner {
-        padding-bottom: 70px;
+        @include adaptiveValue("padding-bottom", 70, 40);
     }
 
     &__title {
         margin-bottom: 100px;
+        @include adaptiveValue("margin-bottom", 100, 50);
     }
 
     &__list {
@@ -37,9 +38,9 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 20px;
-        width: 270px;
-        height: 270px;
+        @include adaptiveValue("padding", 20, 10);
+        @include adaptiveValue("width", 270, 235);
+        @include adaptiveValue("height", 270, 235);
     }
 
     &__img {

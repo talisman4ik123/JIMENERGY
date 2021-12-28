@@ -3,7 +3,9 @@
     overflow-x: hidden;
     &__inner {
         padding-top: 100px;
+        @include adaptiveValue("padding-top", 100, 50);
         padding-bottom: 40px;
+        @include adaptiveValue("padding-bottom", 40, 20);
     }
 
     &__top {
@@ -11,6 +13,7 @@
         justify-content: space-between;
         align-items: center;
         margin-bottom: 80px;
+        @include adaptiveValue("margin-bottom", 80, 50);
     }
 
     &__span {
@@ -27,6 +30,9 @@
             opacity: 1;
             transform: translateX(0);
         }
+        @media (max-width: 470px) {
+            display: none;
+        }
     }
 
     &__list {
@@ -39,7 +45,7 @@
     &__item {
         margin-right: 30px;
         margin-left: 30px;
-        margin-bottom: 60px;
+        @include adaptiveValue("margin-bottom", 60, 50);
 
         opacity: 0;
         will-change: transform;

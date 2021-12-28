@@ -6,13 +6,14 @@
     }
 
     &__title {
-        margin-bottom: 70px;
+        @include adaptiveValue("margin-bottom", 70, 50);
     }
 
     &__content {
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
+        align-items: flex-start;
+        margin-left: 20px;
     }
 
     &__list {
@@ -22,32 +23,13 @@
     }
 
     &__item {
+        display: flex;
+        align-items: center;
         width: 392px;
-        height: 117px;
-        background-size: 70px 70px;
-        background-repeat: no-repeat;
-        background-position: center left;
+        @include adaptiveValue("width", 392, 289);
         margin-right: 6.5px;
         margin-left: 6.5px;
-        margin-bottom: 60px;
-        &:nth-child(1) {
-            background-image: url(../svgicons/like.svg);
-        }
-        &:nth-child(2) {
-            background-image: url(../svgicons/clock.svg);
-        }
-        &:nth-child(3) {
-            background-image: url(../svgicons/quality.svg);
-        }
-        &:nth-child(4) {
-            background-image: url(../svgicons/payment.svg);
-        }
-        &:nth-child(5) {
-            background-image: url(../svgicons/medal.svg);
-        }
-        &:nth-child(6) {
-            background-image: url(../svgicons/rocket.svg);
-        }
+        @include adaptiveValue("margin-bottom", 60, 40);
 
         opacity: 0;
         will-change: transform;
@@ -59,20 +41,23 @@
         }
     }
 
+    &__svg {
+        @include adaptiveValue("width", 70, 50);
+        @include adaptiveValue("height", 70, 50);
+    }
+
     &__caption {
         font-weight: 600;
         @include adaptiveValue("font-size", 20, 18);
         line-height: math.div(30, 20);
         margin-bottom: 15px;
-        margin-right: auto;
-        margin-left: 100px;
     }
 
     &__text {
         font-weight: 500;
         @include adaptiveValue("font-size", 16, 13);
         line-height: math.div(24, 16);
-        max-width: 292px;
-        //@include adaptiveValue("max-width", 292, 214);
+        //max-width: 292px;
+        @include adaptiveValue("max-width", 292, 214);
     }
 }

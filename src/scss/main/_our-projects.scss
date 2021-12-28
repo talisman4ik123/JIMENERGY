@@ -4,10 +4,12 @@
 
     &__inner {
         padding-bottom: 100px;
+        @include adaptiveValue("padding-bottom", 100, 60);
     }
 
     &__title {
         margin-bottom: 50px;
+        @include adaptiveValue("font-size", 36, 28);
     }
 
     &__list {
@@ -45,7 +47,7 @@
     &__caption {
         font-weight: 600;
         @include adaptiveValue("max-width", 289, 180);
-        @include adaptiveValue("font-size", 20, 16);
+        @include adaptiveValue("font-size", 20, 13);
         line-height: math.div(30, 20);
         text-align: center;
 

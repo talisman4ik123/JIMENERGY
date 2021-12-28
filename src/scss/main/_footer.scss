@@ -3,14 +3,18 @@
     overflow-x: hidden;
     &__inner {
         padding: 100px 0px 100px 0px;
+        @include adaptiveValue("padding-bottom", 100, 50);
+        @include adaptiveValue("padding-top", 100, 50);
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
 
     &__title {
         font-size: rem(20);
-        line-height: math.div(24, 20);
+        line-height: 1;
         margin-bottom: 30px;
+        @include adaptiveValue("margin-bottom", 30, 20);
         opacity: 0;
         transition: all .6s ease;
         transform: translate(-10px, -10px);
@@ -23,6 +27,7 @@
     &__logo {
         .logo__link {
             margin-bottom: 50px;
+            @include adaptiveValue("margin-bottom", 50, 19);
             opacity: 0;
             transition: all .6s ease;
             transform: translate(-10px, -10px);
@@ -34,14 +39,15 @@
     
         .logo__img {
             width: 186px;
+            @include adaptiveValue("width", 186, 140);
         }
     }
 }
 .logo {
 
     &__text {
-        max-width: 288px;
-        font-size: rem(16);
+        @include adaptiveValue("max-width", 250, 150);
+        @include adaptiveValue("font-size", 16, 13);
         line-height: math.div(24, 16);
         color: #E6E6E6;
 
@@ -61,6 +67,7 @@
     &__item {
         &:not(:last-child) {
             margin-bottom: 15px;
+            @include adaptiveValue("margin-bottom", 15, 12);
         }
         opacity: 0;
         will-change: transform;
@@ -73,8 +80,9 @@
     }
 
     &__link {
-        font-size: rem(16);
+        @include adaptiveValue("font-size", 16, 13);
         color: #E6E6E6;
+        @include adaptiveValue("max-width", 260, 120);
     }
 
 }
@@ -82,10 +90,11 @@
 .contacts-footer {
 
     &__list {
-        margin-bottom: 50px;
+        @include adaptiveValue("margin-bottom", 50, 30);
     }
 
     &__item {
+        @include adaptiveValue("font-size", 16, 13);
         &:not(:last-child) {
             margin-bottom: 20px;
         }
@@ -127,6 +136,11 @@
         display: flex;
         align-items: center;
         padding: 9px 18px;
+        @include adaptiveValue("padding-bottom", 9, 8);
+        @include adaptiveValue("padding-top", 9, 8);
+        @include adaptiveValue("padding-left", 18, 12);
+        @include adaptiveValue("padding-right", 18, 12);
+        @include adaptiveValue("font-size", 20, 14);
 
         opacity: 0;
         will-change: transform;

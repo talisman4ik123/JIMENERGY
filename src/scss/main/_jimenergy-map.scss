@@ -7,7 +7,10 @@
     &__content {
         background-color: $darkBlue;
         position: absolute;
-        padding: 30px 50px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        @include adaptiveValue("padding-left", 50, 0);
+        @include adaptiveValue("padding-right", 50, 0);
 
         opacity: 0;
         right: -60px;
@@ -18,6 +21,9 @@
             right: 20px;
             bottom: 20px;
         }
+        @media (max-width: 750px) {
+            position: static;
+        }
     }
 }
 
@@ -25,10 +31,15 @@
 .form-jimenergy {
 
     &__legend {
-        font-size: rem(36);
+        font-size: 36px;
+        @include adaptiveValue("font-size", 36, 30);
         opacity: 1;
         transform: translate(0, 0);
         margin-bottom: 30px;
+        @media (max-width: 750px) {
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
     }
 
     &__group {
@@ -38,6 +49,7 @@
 
     &__input {
         margin-bottom: 30px;
+        @include adaptiveValue("margin-bottom", 30, 20);
         background-color: transparent;
         border: 1px solid #fff;
         padding: 12px;
@@ -76,6 +88,9 @@
     &__btn {
         padding: 8px 15px;
         display: flex;
+        @media (max-width: 750px) {
+            margin: 0 auto;
+        }
     }
 
     &__span {

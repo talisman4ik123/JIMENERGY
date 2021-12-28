@@ -3,11 +3,13 @@
     overflow-x: hidden;
     &__inner {
         padding-bottom: 100px;
+        @include adaptiveValue("padding-bottom", 100, 60);
         display: flex;
         align-items: center;
     }
 
     &__box {
+        max-width: 50%;
         margin-right: 60px;
         opacity: 0;
         will-change: transform;
@@ -20,7 +22,7 @@
     }
 
     &__content {
-        max-width: 598px;
+        max-width: 50%;
         font-weight: 600;
         font-size: rem(20);
         line-height: math.div(30, 20);

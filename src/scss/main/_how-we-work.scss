@@ -3,41 +3,45 @@
     position: relative;
     background-color: $bgc;
     &__inner {
-        padding-bottom: 100px;
+        @include adaptiveValue("padding-bottom", 50, 30);
     }
 
     &__title {
-        margin-bottom: 70px;
+        @include adaptiveValue("margin-bottom", 70, 50);
     }
 
     &__list {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        justify-content: center;
     }
 
     &__item {
         width: 307px;
+        @include adaptiveValue("width", 307, 218);
         height: 203px;
         display: flex;
         align-items: center;
+        margin-bottom: 50px;
+        @include adaptiveValue("margin-bottom", 50, 20);
 
         opacity: 0;
         will-change: transform;
-        transform: translateX(500px);
+        transform: translateY(-100px);
         transition: all .6s ease;
         &._active {
             opacity: 1;
             transform: translateX(0);
         }
         &:nth-child(2) {
-            transition: all 1s ease;
+            transition: all .8s ease;
         }
         &:nth-child(3) {
-            transition: all 1.4s ease;
+            transition: all 1s ease;
         }
         &:nth-child(4) {
-            transition: all 1.8s ease;
+            transition: all 1.2s ease;
         }
     }
 
@@ -50,13 +54,15 @@
 
     &__svg {
         margin-bottom: 25px;
+        @include adaptiveValue("width", 50, 30);
+        @include adaptiveValue("height", 50, 30);
     }
 
     &__span {
         display: block;
         margin-top: 15px;
         font-family: $fontFamilyTitle;
-        font-size: rem(36);
+        @include adaptiveValue("font-size", 36, 28);
         line-height: math.div(54, 36);
     }
 
@@ -69,14 +75,13 @@
 
     &__subtitle {
         font-weight: 600;
-        font-size: rem(20);
+        @include adaptiveValue("font-size", 20, 14);
         line-height: math.div(30, 20);
-        margin-bottom: 20px;
     }
 
     &__text {
         max-width: 218px;
-        font-size: rem(16);
+        @include adaptiveValue("font-size", 16, 13);
         line-height: math.div(24, 16);
     }
     &__item {
